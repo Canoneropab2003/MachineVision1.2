@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viscora Editor Photo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="logo/logo.png">
+</head>
+<body>
+
+    <input type="checkbox" class="toggleSidebarMenu" id="toggleSidebarMenu">
+<label for="toggleSidebarMenu" class="sidebarToggleIcon">
+<div class="bar diagonal part-1"></div>
+<div class="bar horizontal"></div>
+<div class="bar diagonal part-2"></div>
+</label>
+
+<div id="sidebarMenu">
+<!-- Logo Section -->
+<div class="logo-container">
+    <img src="logo/logo.png" alt="Viscore Logo" class="sidebar-logo">
+</div>
+
+<ul class="sidebarMenuContent">
+    <li>Viscore <span>Editor</span></li>
+    <li><a href="C:\Users\ASUS\Documents\Log in\home.html">Home Page</a></li>
+    <li><a href="C:\Users\ASUS\Documents\Final-Output\Machine_Vision\Viscore.html">Photo Editor</a></li>
+    <li><a href="C:\Users/ASUS\Documents\Final-Output\Machine_Vision\Shape&Color\index.html">Shape & Color Dectation</a></li>
+    <li><a href="C:\Users\ASUS\Documents\Final-Output\Semi-Final\index.html">Image Orientation, Histogram & Binary, Image Projection</a></li>
+</ul>
+</div>
+<div class="containerokie1">
+    <button onclick="applySmoothing()" class="button">🌫️ Smooth Image</button>
+    <button onclick="Gaussianblur()" class="button">🌪️ Gaussian Blur</button>
+    <button onclick="sharpenImage()" class="button">🔪 Sharpen Image</button>
+    <button onclick="meanRemoval()" class="button">❌ Mean Removal</button>
+    <button onclick="embosslaplascian()" class="button">🖼️ Emboss Laplacian</button>
+</div>
+
+<div class="containerokie2">
+    <label for="imageInput" class="upload-btn">📂 Upload Image</label>
+    <input type="file" id="imageInput" accept="image/*" hidden>
+    <button id="save">💾 Save</button>
+    <button onclick="resetImage()" class="button">🔄 Reset Image</button>
+    <button id="toggleButton" onclick="customkernel()" class="button">⚙️ Show Custom Kernel</button>
+</div>
+
+
+    <div class="container">
+        <h1>Viscore</h1>
+
+        <div class="image-container">
+            <div class="box">
+                <h3>Original</h3>
+                <canvas id="originalCanvas"></canvas>
+            </div>
+            <div class="box">
+                <h3>Processed Image</h3>
+                <canvas id="editedCanvas"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="kernel-wrapper">
+        <div class="kernel-section">
+            <h3>🎛️ Custom Kernel (3x3 Grid)</h3>
+            <div id="kernelGrid">
+                <input type="number" id="k00" value="0">
+                <input type="number" id="k01" value="0">
+                <input type="number" id="k02" value="0">
+                <input type="number" id="k10" value="0">
+                <input type="number" id="k11" value="0">
+                <input type="number" id="k12" value="0">
+                <input type="number" id="k20" value="0">
+                <input type="number" id="k21" value="0">
+                <input type="number" id="k22" value="0">
+            </div>
+            <button onclick="applyCustomKernel()" class="button1">Apply Custom Kernel</button>
+            <button onclick="resetKernelGrid()" class="button1">Reset Grid</button>
+        </div>
+    </div>
+    
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-left">
+            <img src="logo/logo.png" alt="Viscora Logo" class="footer-logo">
+            <p>Viscora &copy; 2025</p>
+        </div>
+        <div class="footer-right">
+            <p>All rights reserved</p>
+            <p>Crafted with ❤️ by cañonero</p>
+        </div>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
